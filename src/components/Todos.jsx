@@ -64,28 +64,51 @@ const Todos = () => {
   return (
     <Box
       //   border={"1px solid black"}
+      className="main-wrapper"
+      height={{
+        base:"500px",
+        md:"600px"
+      }}
       py={"5px"}
-      px={"10px"}
       textAlign={"center"}
       width={{
-        base: "70%",
+        base: "95%",
         md: "50%",
         lg: "30%",
       }}
       m={"auto"}
       marginTop={"40px"}
     >
-      <Heading>TODO APP</Heading>
-      <Flex>
+      <Heading
+        pt={{
+          base: "23px",
+          md: "26px",
+          lg: "35px",
+        }}
+        className="heading"
+        pb={{
+          base: "23px",
+          md: "26px",
+          lg: "35px",
+        }}
+        bg={"#454141"}
+        color={"#fff"}
+      >
+        TODO APP
+      </Heading>
+      <Flex mt={"30px"} px={"15px"}>
         <Input
+          variant="flushed"
           value={task}
-          placeholder="Add something..."
+          paddingLeft={"20px"}
+          fontSize={"19px"}
+          placeholder="Add something here..."
           onChange={(e) => setTask(e.target.value)}
           onKeyPress={(e) => {
             handleEnter(e);
           }}
         />
-        <Button
+        {/* <Button
           _hover={{
             bg: "#474444",
             color: "#fff",
@@ -95,14 +118,22 @@ const Todos = () => {
           onClick={handleClick}
         >
           ADD
-        </Button>
+        </Button> */}
       </Flex>
 
       {todos.length === 0 && (
         <Box color={"#069efc"}>
           <br />
-          <Heading fontSize={"25px"}>NO TASK IS LEFT</Heading>
-          <Heading>Please Add Something...</Heading>
+          <Heading fontSize={{
+            base:"20",
+            md:"25",
+            lg:"28"
+          }}>NO TASK IS LEFT</Heading>
+          <Heading fontSize={{
+            base:"25",
+            md:"30",
+            lg:"32"
+          }}>Please Add Something...</Heading>
         </Box>
       )}
 
