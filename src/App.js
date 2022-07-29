@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import { Box } from '@chakra-ui/react';
+import Todos from './components/Todos';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Box maxWidth={"xxl"}>
+        <Todos/>
+    </Box>
   );
 }
 
